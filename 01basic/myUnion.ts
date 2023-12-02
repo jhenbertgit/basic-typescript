@@ -26,4 +26,21 @@ function getId(id: string | number) {
 getId(1);
 getId("1");
 
+//discriminated union
+
+type ServerData =
+  | {
+      status: "loading";
+    }
+  | {
+      status: "success";
+      id: number;
+      data: "string";
+    }
+  | {
+      status: "error";
+      error: Error;
+    };
+
+
 export {};
